@@ -27,7 +27,7 @@ function createGrid(cats) {
         id: 'catGrid',
         renderTo: 'grid',
         store: store,
-        width: 455,
+        width: 500,
         height: 300,
         title: 'Cats table',
         columns: [
