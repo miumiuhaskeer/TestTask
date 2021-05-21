@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+</head>
+<body>
+
+<link href = "https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-classic/resources/theme-classic-all.css"
+      rel = "stylesheet" />
+<script type = "text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all.js"></script>
+
+<script type = "text/javascript" src = "js/delete-button.js"></script>
+<script type = "text/javascript" src = "js/create-button.js"></script>
+<script type = "text/javascript" src = "js/edit-button.js"></script>
+<script type = "text/javascript" src = "js/cat-grid.js"></script>
+<script type = "text/javascript" src = "js/validators.js"></script>
+
+<script type="text/javascript">
+    Ext.onReady(function () {
+        createCatGrid();
+
+        buildDeleteCatButton();
+        buildEditCatButton()
+        buildNewCatButton();
+    });
+</script>
+
+<div id="grid"></div>
+<div id="buttons"></div>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.testtask.mappers.CatMapper">
+    <resultMap id="result" type="org.example.testtask.models.Cat">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="age" column="age"/>
+    </resultMap>
+    
+    <select id="findById" resultMap="result" parameterType="java.lang.Integer">
+        SELECT * FROM cats WHERE id = #{id}
+    </select>
+
+    <select id="getCats" resultMap="result">
+        SELECT * FROM cats
+    </select>
+
+    <update id="update" parameterType="org.example.testtask.models.Cat">
+        UPDATE cats SET
+            name = #{cat.name},
+            age = #{cat.age}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="java.lang.Integer">
+        DELETE FROM cats WHERE id = #{id}
+    </delete>
+
+    <insert id="save" parameterType="org.example.testtask.models.Cat">
+        INSERT INTO cats (id, name, age) VALUES (#{cat.id}, #{cat.name}, #{cat.age});
+    </insert>
+
+    <select id="getNextId" resultType="java.lang.Integer">
+        SELECT nextval('cat_seq')
+    </select>
+
+</mapper>
