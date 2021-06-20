@@ -1,5 +1,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.example.testtask.mappers.CatMapper">
+
     <resultMap id="result" type="org.example.testtask.models.Cat">
         <id property="id" column="id"/>
         <result property="name" column="name"/>
